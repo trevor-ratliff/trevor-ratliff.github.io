@@ -147,7 +147,7 @@ function ChainReaction() {
         //~ Reaction();
         
     } else {
-        UpdateScores();
+        //~ UpdateScores();
     }
 }
 
@@ -491,11 +491,6 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
         function() {
             lobjPiece.style.top  = '0px';
             lobjPiece.style.left = '0px';
-            
-            //----
-            // call reaction ???
-            //----
-            //~ window.setTimeout(Reaction, 10);
         },
         lintDelay + 1000
     );
@@ -599,7 +594,7 @@ function PlacePiece(vobjCell) {
         //----
         // update scores and increment play count
         //----
-        UpdateScores();
+        //~ UpdateScores();
         gintPlayCount ++;
         
     } catch (err) {
@@ -751,9 +746,6 @@ function Reaction() {
         //----
         larrCells[lintII].setAttribute('pieces', 0);    // larrCells[lintII].querySelectorAll('.piece').length);
         larrCells[lintII].setAttribute('player', '');
-        //~ larrCells[lintII].className = larrCells[lintII].className.replace(' reacting', '');
-        var lobjClickCover = larrCells[lintII].querySelector('.click-cover');
-        //~ lobjClickCover.className = lobjClickCover.className.replace(/ reacting/g, '');
         
         //----
         // check to see if we need to run Reaction again
@@ -761,9 +753,10 @@ function Reaction() {
         var larrCells = GetReactingCells();
         
         if (larrCells.length > 0) {
-            window.setTimeout(ChainReaction, 900);
+            window.setTimeout(ChainReaction, 500);
         } else {
             FixCells();
+            UpdateScores();
             gblnCanPlay = true;
         }
     }
@@ -825,7 +818,7 @@ function SwapPieces(vobjCell) {
         //----
         // update scores
         //----
-        UpdateScores();
+        //~ UpdateScores();
         
     } catch (err) {
         //----
@@ -865,6 +858,9 @@ function UpdateScores() {
         gblnCanPlay = false;
         gblnWon = true;
         //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+        window.setTimeout( function () {
+            alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
+        }, 500);
     }
     
     $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
