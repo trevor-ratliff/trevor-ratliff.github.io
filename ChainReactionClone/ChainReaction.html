@@ -1,0 +1,84 @@
+<!DOCTYPE html>    <!-- HTML 5.0 doctype -->
+
+<!--
+//====
+/// @file ChainReaction.html
+/// @brief A clone of a game I used to play on a Texas Instruments Pegesus Computer
+/// @author Trevor Ratliff
+/// @date 2014-01-10
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-10  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  | 
+///         file creation  |
+/// @endverbatim
+//====
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- <link rel="alternate stylesheet" type="text/css" href="styles/ChainReactionLight.css" title="alternate" /> -->
+        <link rel="stylesheet" type="text/css" href="styles/ChainReaction.css" title="main" />
+        
+        <script type="text/javascript" src="scripts/ChainReaction.js"></script>
+        
+        <noscript>
+            Turning JavaScript on in your browser makes for a much better experience!
+        </noscript>
+    </head>
+    
+    <body>
+        <div id="board"></div>
+        <div id="controls">
+            <h1>Chain Reaction</h1>
+            <h3>The object of the game is to wipe out the other player</h3>
+            <div>
+                <label for="selBoardSize">Board Size</label>
+                <select id="selBoardSize">
+                    <option value="6">6x6</option>
+                    <option value="8" selected>8x8</option>
+                    <option value="10">10x10</option>
+                </select>
+                <button type="button" id="reset">Reset</button>
+            </div>
+            <br>
+            <div>
+                <label for="txtTurn">Player Turn = </label><span id="txtTurn">A</span>
+                
+            </div>
+            <br>
+            <div id="resources">
+                <label for="svgPlayerA">A = </label>
+                <!-- <svg id="svgPlayerA" class="piece" height="1em" width="1em">
+                  <defs>
+                    <radialGradient id="gradPlayerA" cx="50%" cy="50%" r="100%" fx="65%" fy="30%">
+                      <stop offset="0%" style="stop-color:rgb(100,100,255);stop-opacity:0" />
+                      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                    </radialGradient>
+                  </defs>
+                  <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerA)" stroke="#333399" />
+                  Sorry, your browser does not support inline SVG.
+                </svg> -->
+                <object id="svgPlayerA" type="image/svg+xml" data="resources/PlayerA_small.svg" class="piece"></object>
+                x <span id="playerScoreA">0</span>
+                <br />
+                <label for="svgPlayerB">B = </label>
+                <!-- <svg id="svgPlayerB" class="piece" height="1em" width="1em">
+                  <defs>
+                    <radialGradient id="gradPlayerB" cx="50%" cy="50%" r="100%" fx="65%" fy="30%">
+                      <stop offset="0%" style="stop-color:rgb(255,100,100);stop-opacity:0" />
+                      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    </radialGradient>
+                  </defs>
+                  <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerB)" stroke="#993333" />
+                  Sorry, your browser does not support inline SVG.
+                </svg> -->
+                <object id="svgPlayerB" type="image/svg+xml" data="resources/PlayerB_small.svg" class="piece"></object>
+                 x <span id="playerScoreB">0</span>
+            </div>
+        </div>
+    </body>
+</html>

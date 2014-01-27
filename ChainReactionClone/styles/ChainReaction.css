@@ -1,0 +1,183 @@
+/****
+* @file ChainReaction.css
+* @brief css for Chain Reaction game clone
+* @author Trevor Ratliff
+* @date 2014-01-10
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+/****
+* tags
+****/
+
+html, body {
+	border: 0px;
+	height: 100%;
+	margin: 0px;
+	overflow: auto;
+	padding: 0px;
+}
+
+
+body {
+	background-color: hsla(0, 0%, 15%, 1);
+	font-family: verdana;
+	font-size: 2em;
+}
+
+
+/****
+* ids
+****/
+
+#board {
+	/* background-color: hsla(60, 100%, 50%, 1); */
+	/* border: 7px double hsla(120, 100%, 50%, 1); */
+	box-sizing: border-box;
+	left: calc(10% + 2.4ex);
+	margin: 0% auto;
+	position: relative;
+	top: 5%;
+}
+
+
+#controls {
+	background-color: hsla(175, 100%, 80%, 1);
+	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
+	border: 7px double hsla(360, 100%, 0%, 1);
+	border-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
+	/* float: left; */
+	font-size: 0.4em;
+	font-weight: 600;
+	/* margin-top: -25%; */
+	left: 5%;
+	max-height: 400px;
+	max-width: 20%;
+	min-width: 12em;
+	overflow: auto;
+	padding: 5px;
+	position: absolute;
+	top: 5%;
+	/* width: 30%; */
+	z-index: 100;
+}
+
+
+#controls h1, #controls h3 {
+	text-align: center;
+}
+
+
+#resources {
+	background-color: hsla(31, 100%, 95%, 1);
+	border: 1px solid hsla(360, 100%, 0%, 1);
+	left: -3px;
+	padding: 2px;
+	position: relative;
+	top: 3px;
+	width: calc(100% + 0px);
+}
+
+#resources .piece {
+	float: none;
+	height: 2.5ex;
+	position: relative;
+	width: 2.5ex;
+}
+
+
+/****
+* classes
+****/
+
+.active {
+	display: block;
+}
+
+
+.cell {
+	background-color: hsla(31, 100%, 95%, 1);
+	background: 
+		linear-gradient(  0deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31, 100%, 100%, 1.0) ), 
+		linear-gradient( 90deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31,  70%,  60%, 1.0) ),
+		linear-gradient(180deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31,  60%,  45%, 1.0) ), 
+		linear-gradient(270deg, hsla(31, 100%,  95%, 1.00) 85%, hsla(31, 100%, 100%, 1.0) ); 
+	border: 1px solid hsla(240, 0%, 15%, 1);
+	border-radius: 9px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 2em;
+	float: left;
+	position: relative;
+	width: 2em;
+}
+
+
+.click-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+
+.first-in-row {
+	clear: left;
+}
+
+
+.piece {
+	display: inline;
+	/* float: left; */
+	height: 45%;
+	position: relative;
+	width: 45%;
+	z-index: 10;
+}
+
+
+div.reacting {
+	background-color: hsla(48, 100%, 65%, 0.5);
+	z-index: 0;
+}
+
+
+.s6 {
+	height: calc(100%/6);
+	width: calc(100%/6);
+}
+
+
+.s8 {
+	height: calc(100%/8);
+	width: calc(100%/8);
+}
+
+
+.s10 {
+	height: calc(100%/10);
+	width: calc(100%/10);
+}
+
+
+/****
+* Screen adjustments based on size
+****/
+@media all and (max-width: 480px) {
+	#controls {
+		left: initial;
+		margin: 0px auto;
+		max-width: initial;
+		position: relative;
+		width: 90%;
+	}
+	
+	#board {
+		left: initial;
+	}
+}
