@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<title id="title3972">Discat</title>
+	<metadata id="metadata7">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title>Discat</dc:title>
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>Trevor Ratliff</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<dc:date>2014-01-24</dc:date>
+			</cc:Work>
+			<cc:License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+	<g id="layer7" transform="matrix(0.94080733,0,0,0.94080733,14.621773,0.08879356)">
+		<g id="gDiscat">
+			<g id="gHeadBlack" stroke-linejoin="miter" transform="translate(-2,-800.36217)" stroke="#000" stroke-linecap="butt" fill="#000">
+				<path id="pathHeadBlack" stroke-width="0.86644328px" d="m47.528,858.29c34.658-34.658,112.64-34.658,147.3,0,34.658,34.658,34.658,112.64,0,147.3-34.658,34.658-86.644,25.993-173.29,25.993,0-86.644-8.6644-138.63,25.993-173.29z"/>
+				<path id="pathHeadEarRight" stroke-width="1px" transform="translate(0,802.36218)" d="m95,40c11.217-12.092,17.581-25.508,20-40,15.198,12.761,25.737,25.911,25,40z"/>
+				<path id="pathHeadEarLeft" stroke-width="1px" d="m208.52,957.88c12.092-11.217,25.508-17.581,40-20-12.761-15.198-25.911-25.737-40-25z"/>
+				<path id="pathHeadFurLeft" stroke-width="1px" d="m87,1031.9s17.04-0.4232,14.507,27.498c18.649-26.876,20.209-3.3208,20.209-3.3208s14.573-29.032,20.405-4.8386c8.8378-28.275,16.685-8.2016,16.685-8.2016s6.0275-21.983,13.062-10.538c2.9072-12.876,13.545-19.643,13.545-19.643l-4.3769-11.445-87.013,17.163z"/>
+				<path id="pathHeadFurRight" stroke-width="1px" d="m21.513,964.82s0.4232-17.04-27.498-14.507c26.876-18.649,3.3208-20.209,3.3208-20.209s29.032-14.573,4.8386-20.405c28.275-8.8379,8.2016-16.685,8.2016-16.685s21.983-6.0277,10.538-13.062c12.876-2.9072,19.643-13.545,19.643-13.545l11.445,4.3769-17.163,87.014z"/>
+			</g>
+			<g id="gHeadColors" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="0.62087125px" transform="translate(0,3.9691162e-6)">
+				<path id="pathHeadRed" stroke="#F00" transform="translate(0,3.9691162e-6)" fill="#F00" d="m53.619,75.947c22.575-26.905,78.241-31.775,105.15-9.199,26.9,22.576,31.77,78.242,9.19,105.14-56.99,49.17-90.799,6.96-128.47,35.35,21.418-42.03-26.461-72.97,14.126-131.29z"/>
+				<path id="pathHeadBlue" stroke="#0080ff" transform="translate(0,3.9691162e-6)" fill="#0080ff" d="m76.209,80.945c26.905-22.576,82.571-17.706,105.15,9.1991,22.576,26.905,17.706,82.571-9.1991,105.15-64.67,38.53-90.635-8.92-132.66,12.5,28.391-37.67-13.387-76.46,36.71-126.84z"/>
+				<path id="pathHeadOrange" stroke="#ff8000" transform="translate(0,3.9691162e-6)" fill="#ff8000" d="M67.279,78.612c25.265-24.397,96.471-16.612,101.47-1.612,2.6715,29.098,10.953,67.797-14.311,92.195-61.824,42.94-74.503,14.21-114.93,38.51,25.694-39.56-18.688-75.34,27.772-129.1z"/>
+				<path id="pathHeadGreen" stroke="#008000" transform="translate(0,3.9691162e-6)" fill="#008000" d="M79.594,95.418c23.956-25.687,57.146-23.257,89.156-18.418,20,10,24.584,76.15,0.6313,101.84-59.49,46.12-91.042,2.194-130.15,28.575,23.589-40.848-3.225-55.874,40.358-111.99z"/>
+				<path id="pathHeadYellow" d="m73.75,87c24.835-24.835,70-25,96.821-9.0473,13.18,29.047,13.01,69.217-11.82,94.047-61.063,44.02-79.242,10.52-119.24,35.52,25-40-11.273-65.96,34.242-120.52z" stroke="#FF0" fill="#FF0"/>
+			</g>
+			<g id="gFace" stroke-miterlimit="4" stroke="#000" stroke-linecap="round" stroke-dasharray="none">
+				<path id="pathMouth" stroke-linejoin="miter" stroke-width="4" fill="none" d="m78.75,137s-5.75,10-0.75,15,15,0,15,0l5-5-5,5s-5,10,0,15,15.75,0,15.75,0"/>
+				<path id="pathNose" stroke-linejoin="round" stroke-width="2.75" fill="#ffa080" d="m98,147,0-15,15,15z"/>
+				<g id="gEyeLeft" transform="translate(-11.25,12)">
+					<path id="pathEyeLeft" stroke-linejoin="round" d="m180,137.5c0,6.9036-5.5964,12.5-12.5,12.5s-12.5-5.5964-12.5-12.5,5.5964-12.5,12.5-12.5,12.5,5.5964,12.5,12.5z" transform="matrix(1.0344828,0,0.16264422,1.0344828,-40.88944,-7.2413793)" stroke-width="4" fill="#FF0"/>
+					<path id="pathEyeIrisLeft" stroke-linejoin="miter" stroke-width="1.31818175" fill="#000" d="M148.16,141.84c1.84-6.84,6.84-11.84,13.18-13.18-1.34,6.34-6.34,11.34-13.18,13.18"/>
+				</g>
+				<g id="gEyeRight" transform="translate(-61.25,-33)">
+					<path id="pathEyeRight" stroke-linejoin="round" d="m180,137.5c0,6.9036-5.5964,12.5-12.5,12.5s-12.5-5.5964-12.5-12.5,5.5964-12.5,12.5-12.5,12.5,5.5964,12.5,12.5z" transform="matrix(1.0344828,0,0.16264422,1.0344828,-40.88944,-7.2413793)" stroke-width="4" fill="#FF0"/>
+					<path id="pathEyeIrisRight" stroke-linejoin="miter" stroke-width="1.31818175" fill="#000" d="M148.16,141.84c1.84-6.84,6.84-11.84,13.18-13.18-1.34,6.34-6.34,11.34-13.18,13.18"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
