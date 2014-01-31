@@ -1,0 +1,19 @@
+CACHE MANIFEST
+CACHE:
+# 2014-02-21 v0.8.0
+/styles/ChainReaction.css
+/resources/PlayerA_small.svg
+/resources/PlayerB_small.svg
+/resources/icon-16.png
+/resources/icon-32.png
+/resources/icon-48.png
+/resources/icon-60.png
+/resources/icon-64.png
+/resources/icon-128.png
+/resources/icon-256.png
+/scripts/ChainReaction.js
+/ChainReaction.html
+
+NETWORK:
+
+FALLBACK:

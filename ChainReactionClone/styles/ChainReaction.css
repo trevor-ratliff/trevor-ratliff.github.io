@@ -45,26 +45,13 @@ body {
 
 
 #controls {
-	background-color: hsla(175, 100%, 80%, 1);
-	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
-	border: 7px double hsla(360, 100%, 0%, 1);
-	border-radius: 8px;
-	box-sizing: border-box;
-	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
-	/* float: left; */
-	font-size: 0.4em;
-	font-weight: 600;
-	/* margin-top: -25%; */
 	left: 5%;
 	max-height: 400px;
 	max-width: 20%;
-	min-width: 12em;
-	overflow: auto;
-	padding: 5px;
+	min-width: 10em;
 	position: absolute;
 	top: 5%;
 	/* width: 30%; */
-	z-index: 100;
 }
 
 
@@ -72,6 +59,18 @@ body {
 	text-align: center;
 }
 
+
+#controls {
+	font-size: 0.52em;
+}
+
+#controls h1 {
+	font-size: x-large;
+}
+
+#controls h3 {
+	font-size: large;
+}
 
 #resources {
 	background-color: hsla(31, 100%, 95%, 1);
@@ -81,13 +80,6 @@ body {
 	position: relative;
 	top: 3px;
 	width: calc(100% + 0px);
-}
-
-#resources .piece {
-	float: none;
-	height: 2.5ex;
-	position: relative;
-	width: 2.5ex;
 }
 
 
@@ -113,8 +105,26 @@ body {
 	-moz-box-sizing: border-box;
 	height: 2em;
 	float: left;
+	line-height: 5%;
 	position: relative;
 	width: 2em;
+}
+
+
+.controls {
+	background-color: hsla(175, 100%, 80%, 1);
+	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
+	border: 7px double hsla(360, 100%, 0%, 1);
+	border-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
+	/* float: left; */
+	font-size: 0.8em;
+	font-weight: 600;
+	/* margin-top: -25%; */
+	overflow: auto;
+	padding: 5px;
+	z-index: 100;
 }
 
 
@@ -132,12 +142,16 @@ body {
 
 
 .piece {
-	display: inline;
-	/* float: left; */
+	/* display: inline; */
+	float: left;
 	height: 45%;
 	position: relative;
 	width: 45%;
 	z-index: 10;
+}
+
+.player-b {
+	float: right;
 }
 
 
@@ -165,19 +179,54 @@ div.reacting {
 }
 
 
+.score {
+	background-color: hsla(31, 100%, 95%, 1);
+	border: 1px solid hsla(360, 100%, 0%, 1);
+	display: inline-block;
+	left: 0px;
+	margin: 0px;
+	padding: 4px;
+	position: relative;
+	top: 0px;
+	width: calc(50% - 15px);
+}
+
+
+.score .piece {
+	float: none;
+	height: 2.5ex;
+	position: relative;
+	width: 2.5ex;
+}
+
+
 /****
 * Screen adjustments based on size
 ****/
-@media all and (max-width: 480px) {
+
+/* @media all and (max-width: 480px) { */
+/* @media all and (orientation:portrait) { */
+/* @media all and (max-width: 599px) and (min-aspect-ratio: 4/3), (orientation: portrait) { */
+@media all and (max-aspect-ratio: 4/3) {
 	#controls {
+		box-shadow: none;
 		left: initial;
-		margin: 0px auto;
+		margin: 1ex auto 0px;
 		max-width: initial;
 		position: relative;
+		top: initial;
 		width: 90%;
 	}
 	
+	
+	#controls {
+		font-size: 0.52em;
+	}
+	
+	
 	#board {
 		left: initial;
+		margin: 1ex auto 0px;
+		top: initial;
 	}
 }

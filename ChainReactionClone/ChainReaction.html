@@ -13,10 +13,13 @@
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
 ///     2014-01-10  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  | 
 ///         file creation  |
+///     2014-01-30  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  | 
+///         added commented out appcache file  |
 /// @endverbatim
 //====
 -->
 
+<!-- <html manifest="ChainReaction.appcache"> -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -31,8 +34,7 @@
     </head>
     
     <body>
-        <div id="board"></div>
-        <div id="controls">
+        <div id="controls" class="controls">
             <h1>Chain Reaction</h1>
             <h3>The object of the game is to wipe out the other player</h3>
             <div>
@@ -44,13 +46,11 @@
                 </select>
                 <button type="button" id="reset">Reset</button>
             </div>
-            <br>
-            <div>
-                <label for="txtTurn">Player Turn = </label><span id="txtTurn">A</span>
-                
-            </div>
-            <br>
-            <div id="resources">
+            <hr>
+            
+            <label for="txtTurn">Player Turn = </label><span id="txtTurn">A</span><br>
+            
+            <div id="ScoreA" class="score">
                 <label for="svgPlayerA">A = </label>
                 <!-- <svg id="svgPlayerA" class="piece" height="1em" width="1em">
                   <defs>
@@ -62,9 +62,12 @@
                   <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerA)" stroke="#333399" />
                   Sorry, your browser does not support inline SVG.
                 </svg> -->
-                <object id="svgPlayerA" type="image/svg+xml" data="resources/PlayerA_small.svg" class="piece"></object>
-                x <span id="playerScoreA">0</span>
-                <br />
+                <!-- <object id="svgPlayerA" type="image/svg+xml" data="resources/PlayerA_small.svg" class="piece"></object> -->
+                <img id="svgPlayerA" type="image/svg+xml" src="resources/PlayerA_small.svg" class="piece" />
+                <span>x </span><span id="playerScoreA">0</span>
+            </div>
+            
+            <div id="ScoreB" class="score">
                 <label for="svgPlayerB">B = </label>
                 <!-- <svg id="svgPlayerB" class="piece" height="1em" width="1em">
                   <defs>
@@ -76,9 +79,13 @@
                   <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerB)" stroke="#993333" />
                   Sorry, your browser does not support inline SVG.
                 </svg> -->
-                <object id="svgPlayerB" type="image/svg+xml" data="resources/PlayerB_small.svg" class="piece"></object>
-                 x <span id="playerScoreB">0</span>
+                <!-- <object id="svgPlayerB" type="image/svg+xml" data="resources/PlayerB_small.svg" class="piece"></object> -->
+                <img id="svgPlayerB" type="image/svg+xml" src="resources/PlayerB_small.svg" class="piece">
+                <span>x </span><span id="playerScoreB">0</span>
             </div>
         </div>
+        
+        <div id="board"></div>
+        
     </body>
 </html>
