@@ -25,7 +25,7 @@ html, body {
 body {
 	background-color: hsla(0, 0%, 15%, 1);
 	font-family: verdana;
-	font-size: 2em;
+	font-size: 2rem;
 }
 
 
@@ -37,7 +37,7 @@ body {
 	/* background-color: hsla(60, 100%, 50%, 1); */
 	/* border: 7px double hsla(120, 100%, 50%, 1); */
 	box-sizing: border-box;
-	left: calc(10% + 2.4ex);
+	left: calc(10% + 1.2rem);
 	margin: 0% auto;
 	position: relative;
 	top: 5%;
@@ -45,31 +45,28 @@ body {
 
 
 #controls {
+	/* font-size: 0.8rem; */
 	left: 5%;
 	max-height: 400px;
 	max-width: 20%;
-	min-width: 10em;
+	min-width: 10rem;
 	position: absolute;
 	top: 5%;
 	/* width: 30%; */
 }
 
 
-#controls h1, #controls h3 {
+.controls h1, .controls h3 {
 	text-align: center;
 }
 
 
-#controls {
-	font-size: 0.52em;
+.controls h1 {
+	font-size: 1.4rem;
 }
 
-#controls h1 {
-	font-size: x-large;
-}
-
-#controls h3 {
-	font-size: large;
+.controls h3 {
+	font-size: 1.2rem;
 }
 
 #resources {
@@ -103,11 +100,11 @@ body {
 	border-radius: 9px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	height: 2em;
+	height: 2rem;
 	float: left;
 	line-height: 5%;
 	position: relative;
-	width: 2em;
+	width: 2rem;
 }
 
 
@@ -119,7 +116,7 @@ body {
 	box-sizing: border-box;
 	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
 	/* float: left; */
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	font-weight: 600;
 	/* margin-top: -25%; */
 	overflow: auto;
@@ -207,9 +204,15 @@ div.reacting {
 /* @media all and (max-width: 480px) { */
 /* @media all and (orientation:portrait) { */
 /* @media all and (max-width: 599px) and (min-aspect-ratio: 4/3), (orientation: portrait) { */
-@media all and (max-aspect-ratio: 4/3) {
+@media all and (max-aspect-ratio: 4/3), (max-width: 500px) {
+	html {
+		font-size: 0.75em;
+	}
+	
+	
 	#controls {
 		box-shadow: none;
+		/* font-size: 0.7rem; */
 		left: initial;
 		margin: 1ex auto 0px;
 		max-width: initial;
@@ -219,14 +222,15 @@ div.reacting {
 	}
 	
 	
-	#controls {
-		font-size: 0.52em;
-	}
-	
-	
 	#board {
 		left: initial;
 		margin: 1ex auto 0px;
 		top: initial;
 	}
 }
+
+/* @media all and (max-width: 500px) {
+	#controls {
+		font-size: 0.7rem;
+	}
+} */
