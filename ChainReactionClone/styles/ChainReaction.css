@@ -37,7 +37,7 @@ body {
 	/* background-color: hsla(60, 100%, 50%, 1); */
 	/* border: 7px double hsla(120, 100%, 50%, 1); */
 	box-sizing: border-box;
-	left: calc(10% + 1.2rem);
+	left: calc(2rem + 225px);
 	margin: 0% auto;
 	position: relative;
 	top: 5%;
@@ -49,7 +49,7 @@ body {
 	left: 5%;
 	max-height: 400px;
 	max-width: 20%;
-	min-width: 10rem;
+	min-width: 225px;
 	position: absolute;
 	top: 5%;
 	/* width: 30%; */

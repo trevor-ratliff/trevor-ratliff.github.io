@@ -52,6 +52,35 @@ function $( vstrPath ) {
 
 
 //====
+/// @fn AddPieces(vobjCell, vstrPlayer, vintCount)
+/// @brief adds the set number of pieces to the passed in cell for the selected player
+/// @author Trevor Ratliff
+/// @date 2015-02-26
+/// @param vobjCell -- passed in cell object to add pieces to
+/// @param vstrPlayer -- string of the player ['A','B']
+/// @param vintCount -- number of pieces to add
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-02-26  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function AddPieces (vobjCell, vstrPlayer, vintCount) { 
+    for (var lintII = 0; lintII < vintCount; lintII++) {
+        var lobjNewPiece = $('#svgPlayer' + vstrPlayer)[0].cloneNode(true);
+        lobjNewPiece.id = 'piece_' + gintPlayCount;
+        lobjNewPiece.className += ' player-' + vstrPlayer.toLowerCase();
+        vobjCell.appendChild(lobjNewPiece);
+        gintPlayCount += 1;
+    }
+    vobjCell.setAttribute('pieces', vobjCell.querySelectorAll('.piece').length);
+}
+
+
+//====
 /// @fn CellClick()
 /// @brief handles a player's click on a cell of the board
 /// @author Trevor Ratliff
@@ -137,17 +166,13 @@ function ChainReaction() {
         //----
         // setup reaction 'animation'
         //----
-        window.setTimeout(PieceAnimateStart, 50);
-        //~ PieceAnimateStart();
+        window.setTimeout(PieceAnimateStart, 10);
         
         //----
         // set up reaction
         //----
         window.setTimeout(Reaction, 1500);
-        //~ Reaction();
         
-    } else {
-        //~ UpdateScores();
     }
 }
 
@@ -361,6 +386,9 @@ function GameInit() {
 /// @return a node list
 //  
 //  Definitions:
+//      lstrPlayer -- marker for current player so only their pieces are affected
+//      larrReturn -- array to return to calling code
+//      larrCells -- array of pieces that are the [max + 1] of their parent cell
 //  
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
@@ -370,22 +398,23 @@ function GameInit() {
 //====
 function GetReactingCells() {
     Log('GetReactingCells');
-    return $(
-        '.cell[pieces="7"][maxpieces="4"], ' + 
-        '.cell[pieces="6"][maxpieces="4"], ' + 
-        '.cell[pieces="5"][maxpieces="4"], ' + 
-        '.cell[pieces="4"][maxpieces="4"], ' + 
     
-        '.cell[pieces="6"][maxpieces="3"], ' + 
-        '.cell[pieces="5"][maxpieces="3"], ' + 
-        '.cell[pieces="4"][maxpieces="3"], ' + 
-        '.cell[pieces="3"][maxpieces="3"], ' + 
-        
-        '.cell[pieces="5"][maxpieces="2"], ' + 
-        '.cell[pieces="4"][maxpieces="2"], ' + 
-        '.cell[pieces="3"][maxpieces="2"], ' + 
-        '.cell[pieces="2"][maxpieces="2"]'
+    var lstrPlayer = gblnFirstPlayersTurn ? 'b' : 'a';
+    var larrReturn = [];
+    var larrCells = $(
+        '.cell[maxpieces="4"]>.player-' + lstrPlayer + ':nth-child(5),' +
+        '.cell[maxpieces="3"]>.player-' + lstrPlayer + ':nth-child(4),' +
+        '.cell[maxpieces="2"]>.player-' + lstrPlayer + ':nth-child(3)'
     );
+    
+    //----
+    // get parent cells
+    //----
+    for (var lintII = 0; lintII < larrCells.length; lintII++) {
+        larrReturn.push(larrCells[lintII].parentNode);
+    }
+    
+    return larrReturn;
 }
 
 
@@ -530,7 +559,6 @@ function PieceAnimateStart() {
             //----
             MoveDelay(larrPieces[lintNN], 10);
         }
-        //~ larrCells[lintII].className += ' reacting';
         larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
 }
@@ -583,7 +611,7 @@ function PlacePiece(vobjCell) {
         //----
         // check for chain reaction
         //----
-        if (vobjCell.getAttribute('maxPieces') == lintPieces) {
+        if (vobjCell.getAttribute('maxPieces') <= lintPieces) {
             //----
             // start chain reaction
             //----
@@ -596,7 +624,6 @@ function PlacePiece(vobjCell) {
         //----
         // update scores and increment play count
         //----
-        //~ UpdateScores();
         gintPlayCount ++;
         
     } catch (err) {
@@ -655,8 +682,7 @@ function Reaction() {
     //----
     var larrCells = GetReactingCells();
     
-    for (var lintII = 0; lintII < 4; lintII++) {
-    //~ for (var lintII = 0; lintII < larrCells.length; lintII++) {
+    for (var lintII = 0; lintII < larrCells.length; lintII++) {
         var lintCount = 0;
         var lstrRow = larrCells[lintII].id.substring(0,2);
         var lstrCol = larrCells[lintII].id.substring(2);
@@ -747,26 +773,21 @@ function Reaction() {
         //----
         // reset cell
         //----
-        larrCells[lintII].setAttribute('pieces', 0);    // larrCells[lintII].querySelectorAll('.piece').length);
+        larrCells[lintII].setAttribute('pieces', larrCells[lintII].querySelectorAll('.piece').length);
         larrCells[lintII].setAttribute('player', '');
         
         //----
         // check to see if we need to run Reaction again
         //----
-        var larrCells = GetReactingCells();
+        var larrNewCells = GetReactingCells();
         
-        if (larrCells.length > 0 &&
+        if (larrNewCells.length > 0 &&
             $('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) 
         {
             //----
-            // test for pieces of opposite team (player has already switched ... I may need to adjust this)
+            // set up a call to ChainReaction to start process again
             //----
-            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'b' : 'a')).length > 0) {
-            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) {
-                window.setTimeout(ChainReaction, 50);
-            //~ } else {
-                //~ gblnWon = true;
-            //~ }
+            window.setTimeout(ChainReaction, 50);
             
         } else {
             FixCells();
@@ -829,11 +850,6 @@ function SwapPieces(vobjCell) {
             vobjCell.appendChild(lobjNew);
         }
         
-        //----
-        // update scores
-        //----
-        //~ UpdateScores();
-        
     } catch (err) {
         //----
         // handle the error
@@ -862,24 +878,25 @@ function SwapPieces(vobjCell) {
 //====
 function UpdateScores() {
     Log('UpdateScores');
-    if (!gblnWon)
-    var lobjPlayerA = $('.player-a');
-    var lobjPlayerB = $('.player-b');
-    
-    //----
-    // check to see if a player has a score of 0
-    //----
-    if ((lobjPlayerA.length < 1 || lobjPlayerB.length < 1) && gintPlayCount > 2) {
-        gblnCanPlay = false;
-        gblnWon = true;
-        //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
-        window.setTimeout( function () {
-            alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
-        }, 500);
+    if (!gblnWon) {
+        var lobjPlayerA = $('.player-a');
+        var lobjPlayerB = $('.player-b');
+        
+        //----
+        // check to see if a player has a score of 0
+        //----
+        if ((lobjPlayerA.length < 1 || lobjPlayerB.length < 1) && gintPlayCount > 2) {
+            gblnCanPlay = false;
+            gblnWon = true;
+            //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+            window.setTimeout( function () {
+                alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
+            }, 500);
+        }
+        
+        $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
+        $('#playerScoreB')[0].innerHTML = lobjPlayerB.length;
     }
-    
-    $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
-    $('#playerScoreB')[0].innerHTML = lobjPlayerB.length;
 }
 
 
